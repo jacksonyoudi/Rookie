@@ -1,0 +1,26 @@
+syntax = "proto3";
+package msgproto;
+
+// 定义协议
+
+// 使用 0值
+message msg {
+    uint32 cmd = 1;
+    string User = 2;
+    string Key = 3;
+    string Value = 4;
+    string Cookie = 5;
+}
+
+enum cmdType {
+    MOBILE = 0;
+    LOGIN = 1;
+    WRITEMSG = 2;
+    READMSG = 3;
+}
+
+
+message Reply {
+    int32 code = 1;
+    string msg = 2;
+}

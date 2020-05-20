@@ -1,0 +1,33 @@
+#  package conf
+#
+#    type ServiceCfg struct {
+#    MySql struct {
+#    Dsn    string `yaml:"dsn"`
+#    Driver string `yaml:"driver"`
+#    } `yaml:"mysql"`
+#
+#    Redis struct {
+#    Address string `yaml:"address"`
+#    } `yaml:"redis"`
+#
+#    Address string `yaml:"address"`
+#
+#    // interface Quantum
+#  }
+
+mysql:
+  dsn: root:@tcp(localhost:3306)/task?tls=skip-verify&autocommit=true
+  driver: mysql
+
+redis:
+  address: localhost:6379
+
+address: localhost:50000
+
+tls:
+  server:
+    pem: /Users/changyouliang/project/goproject/entrytask/cert/server.pem
+    key: /Users/changyouliang/project/goproject/entrytask/cert/server.key
+  client:
+    pem: /Users/changyouliang/project/goproject/entrytask/cert/client.pem
+    key: /Users/changyouliang/project/goproject/entrytask/cert/client.key
